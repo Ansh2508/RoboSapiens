@@ -2,7 +2,7 @@
 
 An intelligent robotics platform combining the Niryo Ned2 robotic arm with advanced computer vision and Large Language Model (LLM) capabilities for educational and research applications.
 
-## 🎯 Project Overview
+## Project Overview
 
 This project integrates traditional robotics control with modern AI technologies to create an intelligent automation system. Developed for the **Bavarian-Czech Summer School 2025** (September 8-12, 2025).
 
