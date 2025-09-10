@@ -1,0 +1,83 @@
+name: niryo-llm-robo
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  # Python version - Updated to 3.13 as specified
+  - python=3.13
+  
+  # Core scientific computing
+  - numpy>=1.24.0
+  - scipy>=1.10.0
+  - pandas>=2.0.0
+  - matplotlib>=3.7.0
+  
+  # Computer Vision
+  - opencv>=4.8.0
+  - pillow>=10.0.0
+  
+  # Configuration and utilities
+  - pyyaml>=6.0
+  - click>=8.1.0
+  
+  # Development tools
+  - pytest>=7.4.0
+  - black>=23.0.0
+  - flake8>=6.0.0
+  - mypy>=1.5.0
+  
+  # Network and communication
+  - requests>=2.31.0
+  
+  # Documentation
+  - sphinx>=7.0.0
+  
+  # Jupyter for interactive development
+  - jupyter
+  - jupyterlab
+  
+  # IDE support
+  - ipython
+  
+  # pip dependencies (not available in conda)
+  - pip
+  - pip:
+    # Robot control library
+    - pyniryo>=1.2.1
+    
+    # AI and LLM integration
+    - openai>=1.0.0
+    - ollama>=0.1.0
+    - pydantic>=2.0.0
+    
+    # Environment management
+    - python-dotenv>=1.0.0
+    
+    # Testing extensions
+    - pytest-cov>=4.1.0
+    - pytest-mock>=3.11.0
+    - pytest-asyncio>=0.21.0
+    
+    # Development tools
+    - pre-commit>=3.3.0
+    
+    # Logging and monitoring
+    - loguru>=0.7.0
+    - rich>=13.0.0
+    
+    # Network extensions
+    - websockets>=11.0.0
+    
+    # Audio processing
+    - speechrecognition>=3.10.0
+    - pyttsx3>=2.90
+    
+    # GUI utilities
+    - tkinter-tooltip>=2.1.0
+    
+    # Documentation theme
+    - sphinx-rtd-theme>=1.3.0
+    
+    # Performance profiling
+    - memory-profiler>=0.61.0
+    - line-profiler>=4.1.0

@@ -1,0 +1,35 @@
+# Robot Configuration
+# Settings for Niryo Ned2 robot control and communication
+
+robot:
+  # Network connection settings
+  ip: "169.254.200.200"  # Robot IP address (standard for Niryo robots)
+  port: 40001            # Communication port
+  timeout: 30            # Connection timeout in seconds
+  
+  # Movement and control settings
+  max_velocity_percent: 40    # Maximum velocity percentage (safety limit)
+  calibration_timeout: 120    # Calibration timeout in seconds
+  
+  # Safety settings
+  emergency_stop_enabled: true
+  collision_detection_enabled: true
+  workspace_boundaries_enabled: true
+  
+  # Tool settings
+  tool_update_on_connect: true
+  gripper_force_limit: 50.0   # Maximum gripper force in Newtons
+  
+  # Position accuracy settings
+  position_tolerance: 0.5     # Position tolerance in millimeters
+  orientation_tolerance: 0.1  # Orientation tolerance in radians
+  
+  # Movement planning
+  trajectory_smoothing: true
+  path_planning_enabled: true
+  collision_avoidance: true
+  
+  # Debugging and monitoring
+  enable_position_logging: false
+  enable_force_monitoring: true
+  status_update_interval: 1.0  # Status update interval in seconds

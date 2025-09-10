@@ -1,0 +1,89 @@
+# Logging Configuration
+# Settings for system logging and monitoring
+
+logging:
+  # Basic logging settings
+  level: "INFO"  # Options: DEBUG, INFO, WARNING, ERROR, CRITICAL
+  file_path: "data/logs/robotics.log"
+  max_size: "10MB"
+  backup_count: 5
+  
+  # Log message format
+  format: "{time:YYYY-MM-DD HH:mm:ss} | {level: <8} | {name}:{function}:{line} - {message}"
+  
+  # Console logging
+  console:
+    enabled: true
+    level: "INFO"
+    colorize: true
+    format: "<green>{time:HH:mm:ss}</green> | <level>{level: <8}</level> | <cyan>{name}</cyan>:<cyan>{function}</cyan>:<cyan>{line}</cyan> - <level>{message}</level>"
+  
+  # File logging
+  file:
+    enabled: true
+    level: "DEBUG"
+    rotation: "daily"  # Options: daily, weekly, size-based
+    retention: "30 days"
+    compression: "gz"
+  
+  # Module-specific logging levels
+  modules:
+    "src.core.robot_controller": "INFO"
+    "src.core.safety_manager": "WARNING"
+    "src.vision": "INFO"
+    "src.ai": "INFO"
+    "src.automation": "INFO"
+    "pyniryo": "WARNING"
+    "urllib3": "WARNING"
+    "requests": "WARNING"
+  
+  # Performance logging
+  performance:
+    enabled: true
+    log_execution_times: true
+    log_memory_usage: false
+    slow_operation_threshold: 1.0  # Log operations slower than 1 second
+  
+  # Error logging
+  error:
+    enabled: true
+    include_traceback: true
+    log_to_separate_file: true
+    error_file_path: "data/logs/errors.log"
+  
+  # Audit logging (for security and compliance)
+  audit:
+    enabled: true
+    log_user_actions: true
+    log_configuration_changes: true
+    log_safety_events: true
+    audit_file_path: "data/logs/audit.log"
+  
+  # Development and debugging
+  development:
+    log_function_calls: false
+    log_variable_values: false
+    log_network_requests: false
+    log_ai_interactions: true
+  
+  # Log filtering
+  filters:
+    # Suppress noisy log messages
+    suppress_patterns:
+      - "heartbeat"
+      - "keep-alive"
+      - "connection pool"
+    
+    # Highlight important messages
+    highlight_patterns:
+      - "error"
+      - "exception"
+      - "safety"
+      - "emergency"
+  
+  # External logging services (optional)
+  external:
+    enabled: false
+    service: null  # Options: "elasticsearch", "splunk", "datadog"
+    endpoint: null
+    api_key: null
