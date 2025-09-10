@@ -1,0 +1,61 @@
+# Network and Communication Configuration
+# Settings for network connections and communication protocols
+
+network:
+  # General network settings
+  timeout: 10              # Default network timeout in seconds
+  max_retries: 3           # Maximum retry attempts for failed connections
+  retry_delay: 1           # Delay between retries in seconds
+  connection_pool_size: 10 # HTTP connection pool size
+  
+  # Robot communication
+  robot_connection:
+    heartbeat_interval: 5.0    # Heartbeat interval in seconds
+    reconnect_attempts: 5      # Number of reconnection attempts
+    reconnect_delay: 2.0       # Delay between reconnection attempts
+    keep_alive: true           # Enable TCP keep-alive
+    
+  # HTTP/HTTPS settings
+  http:
+    user_agent: "NiryoLLMRobotics/1.0"
+    verify_ssl: true
+    follow_redirects: true
+    max_redirects: 5
+    
+  # API rate limiting
+  rate_limiting:
+    openai_requests_per_minute: 60
+    ollama_requests_per_minute: 120
+    vision_processing_per_second: 10
+    
+  # WebSocket settings (for future real-time features)
+  websocket:
+    ping_interval: 30
+    ping_timeout: 10
+    close_timeout: 10
+    
+  # Network interface preferences
+  interface_preferences:
+    - "ethernet"
+    - "wifi"
+    - "usb"
+    
+  # Proxy settings (if needed)
+  proxy:
+    enabled: false
+    http_proxy: null
+    https_proxy: null
+    no_proxy: ["localhost", "127.0.0.1", "169.254.0.0/16"]
+    
+  # Security settings
+  security:
+    enable_tls: true
+    min_tls_version: "1.2"
+    cipher_suites: ["ECDHE-RSA-AES256-GCM-SHA384", "ECDHE-RSA-AES128-GCM-SHA256"]
+    
+  # Monitoring and diagnostics
+  monitoring:
+    enable_network_monitoring: true
+    log_connection_events: true
+    track_bandwidth_usage: false
+    connection_health_check_interval: 30

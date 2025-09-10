@@ -1,0 +1,62 @@
+# AI and LLM Configuration
+# Settings for artificial intelligence and language model integration
+
+ai:
+  # OpenAI Configuration
+  openai_api_key: null  # Set via environment variable OPENAI_API_KEY
+  openai_model: "gpt-4o"
+  openai_max_tokens: 1000
+  openai_temperature: 0.1
+  openai_timeout: 30
+  
+  # Ollama Configuration (Local LLM)
+  ollama_base_url: "http://localhost:11434"
+  ollama_model: "llama2"
+  ollama_timeout: 30
+  ollama_keep_alive: "5m"
+  
+  # LLM Selection and Fallback
+  primary_llm: "openai"  # Options: "openai", "ollama"
+  fallback_llm: "ollama"
+  enable_fallback: true
+  
+  # Prompt Engineering
+  system_prompts:
+    robot_control: |
+      You are an expert robotics assistant controlling a Niryo Ned2 robotic arm.
+      You can perform pick-and-place operations, object detection, and conveyor belt coordination.
+      Always prioritize safety and provide clear, structured responses.
+    
+    object_detection: |
+      You are analyzing images from a robot workspace to identify objects.
+      Provide structured responses with object type, color, position, and confidence.
+    
+    task_planning: |
+      You are planning robotic tasks based on user requests.
+      Break down complex tasks into simple, safe, executable steps.
+  
+  # Response Processing
+  structured_output_enabled: true
+  response_validation: true
+  max_retries: 3
+  retry_delay: 1.0
+  
+  # Decision Making
+  decision_confidence_threshold: 0.7
+  enable_safety_validation: true
+  require_human_approval: false  # Set to true for critical operations
+  
+  # Natural Language Processing
+  intent_recognition_threshold: 0.8
+  entity_extraction_enabled: true
+  context_window_size: 10  # Number of previous interactions to remember
+  
+  # Performance and Caching
+  enable_response_caching: true
+  cache_ttl: 3600  # Cache time-to-live in seconds
+  max_cache_size: 100
+  
+  # Debugging and Monitoring
+  log_all_requests: false
+  log_response_times: true
+  enable_usage_tracking: true

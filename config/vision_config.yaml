@@ -1,0 +1,55 @@
+# Vision System Configuration
+# Settings for computer vision and image processing
+
+vision:
+  # Camera settings
+  camera_resolution_width: 1920
+  camera_resolution_height: 1080
+  camera_fps: 30
+  
+  # Image processing
+  processing_threads: 4
+  image_buffer_size: 10
+  compression_quality: 85
+  
+  # Object detection
+  detection_confidence_threshold: 0.8
+  detection_algorithms:
+    - "niryo_builtin"
+    - "opencv_contours"
+    - "custom_detection"
+  
+  # Workspace calibration
+  workspace_ratio: 1.0
+  calibration_markers: 4
+  marker_detection_threshold: 0.9
+  
+  # Color detection settings
+  color_ranges:
+    red:
+      lower_hsv: [0, 50, 50]
+      upper_hsv: [10, 255, 255]
+    green:
+      lower_hsv: [40, 50, 50]
+      upper_hsv: [80, 255, 255]
+    blue:
+      lower_hsv: [100, 50, 50]
+      upper_hsv: [130, 255, 255]
+    yellow:
+      lower_hsv: [20, 50, 50]
+      upper_hsv: [30, 255, 255]
+  
+  # Shape detection settings
+  shape_detection:
+    min_contour_area: 500
+    max_contour_area: 50000
+    approximation_epsilon: 0.02
+    
+  # Performance settings
+  enable_gpu_acceleration: false
+  max_processing_time: 5.0  # Maximum processing time per frame in seconds
+  
+  # Debugging
+  save_debug_images: false
+  debug_image_path: "data/images/debug"
+  show_detection_overlay: false

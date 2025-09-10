@@ -1,0 +1,74 @@
+# Niryo LLM Robotics Platform - Python Dependencies
+# Phase 1: Environment Setup and Basic Robot Connectivity
+
+# Core Robot Control
+pyniryo>=1.2.1
+numpy>=1.24.0
+scipy>=1.10.0
+
+# Computer Vision (for future phases)
+opencv-python>=4.8.0
+Pillow>=10.0.0
+
+# AI and LLM Integration
+openai>=1.0.0
+ollama>=0.1.0
+pydantic>=2.0.0
+
+# Data Processing and Analysis
+pandas>=2.0.0
+matplotlib>=3.7.0
+
+# Configuration and Utilities
+PyYAML>=6.0
+python-dotenv>=1.0.0
+click>=8.1.0
+
+# Testing Framework
+pytest>=7.4.0
+pytest-cov>=4.1.0
+pytest-mock>=3.11.0
+pytest-asyncio>=0.21.0
+
+# Development Tools
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.5.0
+pre-commit>=3.3.0
+
+# Logging and Monitoring
+loguru>=0.7.0
+rich>=13.0.0
+
+# Network and Communication
+requests>=2.31.0
+websockets>=11.0.0
+
+# Audio Processing (for voice interface)
+speechrecognition>=3.10.0
+pyttsx3>=2.90
+pyaudio>=0.2.11
+
+# GUI Framework (Phase 6)
+PyQt5>=5.15.0
+PyOpenGL>=3.1.0
+PyOpenGL-accelerate>=3.1.0
+
+# Web Framework and API (Phase 6)
+fastapi>=0.68.0
+uvicorn>=0.15.0
+python-jose[cryptography]>=3.3.0
+python-multipart>=0.0.5
+websockets>=11.0.0
+
+# Additional Computer Vision and Analysis
+scikit-image>=0.21.0
+scikit-learn>=1.3.0
+
+# Documentation
+sphinx>=7.0.0
+sphinx-rtd-theme>=1.3.0
+
+# Performance and Profiling
+memory-profiler>=0.61.0
+line-profiler>=4.1.0
